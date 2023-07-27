@@ -1,19 +1,20 @@
 const stockModels = require('../models/stockModels')
 
 const getIndonesianDate = (date) => {
-    const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu']
-    const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+    const options = {
+        timeZone: 'Asia/Jakarta',
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    }
 
-    const day = days[date.getDay()]
-    const month = months[date.getMonth()]
-    const year = date.getFullYear()
-    const dayOfMonth = date.getDate()
-    const sec = date.getSeconds()
-    const min = date.getMinutes()
-    const hour = date.getHours()
-
-    return `${day}, ${dayOfMonth} ${month} ${year} ${hour}:${min}:${sec}`
+    return date.toLocaleString('id-ID', options)
 }
+
 
 const date = new Date()
 
