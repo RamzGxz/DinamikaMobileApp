@@ -16,7 +16,7 @@ const getIndonesianDate = (date) => {
 }
 
 
-const date = new Date()
+
 
 module.exports = {
     getStock: async (req, res) => {
@@ -29,6 +29,7 @@ module.exports = {
         }
     },
     postStock: async (req, res) => {
+        const date = new Date()
         const data = new stockModels({
             namaBarang: req.body.namaBarang,
             hargaBarang: req.body.hargaBarang,
