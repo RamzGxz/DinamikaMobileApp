@@ -8,9 +8,11 @@ const getIndonesianDate = (date) => {
     const month = months[date.getMonth()]
     const year = date.getFullYear()
     const dayOfMonth = date.getDate()
-    const time = date.getTime()
+    const sec = date.getSeconds()
+    const min = date.getMinutes()
+    const hour = date.getHours()
 
-    return `${day}, ${dayOfMonth} ${month} ${year} ${time}`
+    return `${day}, ${dayOfMonth} ${month} ${year} ${hour}:${min}:${sec}`
 }
 
 const date = new Date()
