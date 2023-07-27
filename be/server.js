@@ -1,13 +1,13 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-require('dotenv').config()
-
+const stockRoutes = require('./routes/stockRoutes')
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect(process.env.DATABASE_URI, {
+// connect to database
+mongoose.connect('mongodb+srv://ramzi:ramzi@cluster0.adzm1i9.mongodb.net/dynamic', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
@@ -16,11 +16,8 @@ mongoose.connect(process.env.DATABASE_URI, {
     console.log(err)
 })
 
-app.get('/anda', (req, res) => {
-    res.send('wahai')
-})
-
-
+// using routes
+app.use(stockRoutes)
 
 app.listen(3000, () => {
     console.log('app listed on http://localhost:3000/')
