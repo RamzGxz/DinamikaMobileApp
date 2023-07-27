@@ -13,7 +13,7 @@ const stockSchema = new mongoose.Schema({
         required: true,
         type: Number
     },
-    tanggal:{
+    tanggal: {
         required: true,
         type: String
     }
