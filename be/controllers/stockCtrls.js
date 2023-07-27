@@ -1,15 +1,16 @@
 const stockModels = require('../models/stockModels')
 
 const getIndonesianDate = (date) => {
-    const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-    const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+    const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu']
+    const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
 
-    const day = days[date.getDay()];
-    const month = months[date.getMonth()];
-    const year = date.getFullYear();
-    const dayOfMonth = date.getDate();
+    const day = days[date.getDay()]
+    const month = months[date.getMonth()]
+    const year = date.getFullYear()
+    const dayOfMonth = date.getDate()
+    const time = date.getTime()
 
-    return `${day}, ${dayOfMonth} ${month} ${year}`;
+    return `${day}, ${dayOfMonth} ${month} ${year} ${time}`
 }
 
 const date = new Date()
