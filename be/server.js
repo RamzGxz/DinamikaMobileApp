@@ -16,7 +16,7 @@ mongoose.connect(process.env.DATABASE_URI, {
     console.log(err)
 })
 
-app.get('/', (req, res) => {
+app.get('/anda', (req, res) => {
     res.send('wahai')
 })
 
