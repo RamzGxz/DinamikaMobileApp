@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transaksis",
+  "info": {
+    "singularName": "transaksi",
+    "pluralName": "transaksis",
+    "displayName": "transaksi",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tanggalTransaksi": {
+      "type": "datetime"
+    },
+    "jumlahTransaksi": {
+      "type": "integer"
+    },
+    "struk": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::struk.struk",
+      "mappedBy": "transaksi"
+    },
+    "rekap_harian": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rekap-harian.rekap-harian",
+      "inversedBy": "transaksis"
+    }
+  }
+}

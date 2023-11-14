@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rekap_tahunans",
+  "info": {
+    "singularName": "rekap-tahunan",
+    "pluralName": "rekap-tahunans",
+    "displayName": "rekap-tahunan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total": {
+      "type": "integer"
+    },
+    "rekap_bulanans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rekap-bulanan.rekap-bulanan",
+      "mappedBy": "rekap_tahunan"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rekap_mingguans",
+  "info": {
+    "singularName": "rekap-mingguan",
+    "pluralName": "rekap-mingguans",
+    "displayName": "rekap-mingguan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total": {
+      "type": "integer"
+    },
+    "rekap_harians": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rekap-harian.rekap-harian",
+      "mappedBy": "rekap_mingguan"
+    },
+    "rekap_bulanan": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rekap-bulanan.rekap-bulanan",
+      "inversedBy": "rekap_mingguans"
+    }
+  }
+}

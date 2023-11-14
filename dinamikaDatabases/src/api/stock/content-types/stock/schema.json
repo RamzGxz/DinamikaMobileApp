@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stocks",
+  "info": {
+    "singularName": "stock",
+    "pluralName": "stocks",
+    "displayName": "stock",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "kodeBarang": {
+      "type": "string"
+    },
+    "namaBarang": {
+      "type": "string"
+    },
+    "harga": {
+      "type": "integer"
+    },
+    "jumlah": {
+      "type": "integer"
+    },
+    "tanggal": {
+      "type": "datetime"
+    },
+    "struk": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::struk.struk",
+      "inversedBy": "stocks"
+    }
+  }
+}

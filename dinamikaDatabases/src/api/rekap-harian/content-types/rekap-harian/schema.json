@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rekap_harians",
+  "info": {
+    "singularName": "rekap-harian",
+    "pluralName": "rekap-harians",
+    "displayName": "rekap-harian",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total": {
+      "type": "integer"
+    },
+    "transaksis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transaksi.transaksi",
+      "mappedBy": "rekap_harian"
+    },
+    "rekap_mingguan": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rekap-mingguan.rekap-mingguan",
+      "inversedBy": "rekap_harians"
+    }
+  }
+}

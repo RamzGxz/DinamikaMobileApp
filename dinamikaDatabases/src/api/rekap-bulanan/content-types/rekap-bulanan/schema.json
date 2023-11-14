@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rekap_bulanans",
+  "info": {
+    "singularName": "rekap-bulanan",
+    "pluralName": "rekap-bulanans",
+    "displayName": "rekap-bulanan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total": {
+      "type": "integer"
+    },
+    "rekap_mingguans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rekap-mingguan.rekap-mingguan",
+      "mappedBy": "rekap_bulanan"
+    },
+    "rekap_tahunan": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rekap-tahunan.rekap-tahunan",
+      "inversedBy": "rekap_bulanans"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "struks",
+  "info": {
+    "singularName": "struk",
+    "pluralName": "struks",
+    "displayName": "struk",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tanggalStruk": {
+      "type": "datetime"
+    },
+    "totalPembayaran": {
+      "type": "integer"
+    },
+    "stocks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stock.stock",
+      "mappedBy": "struk"
+    },
+    "transaksi": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::transaksi.transaksi",
+      "inversedBy": "struk"
+    }
+  }
+}
